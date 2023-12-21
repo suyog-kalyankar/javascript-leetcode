@@ -13,4 +13,6 @@ const palindrome = (num) => {
 }
 
 const x = 1221;
+const y = 1211;
 console.log(palindrome(x))
+console.log(palindrome(y))
