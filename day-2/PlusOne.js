@@ -1,14 +1,14 @@
 const plusOne = (digits) => {
   let digitLen = digits.length - 1;
-  let remainder = 1;
+  let quotient = 1;
   let val = 0;
-  while(digitLen >= 0 && remainder) {
+  while(digitLen >= 0 && quotient) {
     val = digits[digitLen] + 1;
-    remainder = Math.floor(val/10);
+    quotient = Math.floor(val/10);
     digits[digitLen] = val % 10;
     digitLen--;
   }
-  if (remainder) digits.unshift(remainder);
+  if (quotient) digits.unshift(quotient);
   return digits;
 }
 
