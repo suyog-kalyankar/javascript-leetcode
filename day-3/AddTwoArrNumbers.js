@@ -14,8 +14,8 @@ const addTwoArrNumbers = (l1, l2) => {
         }
         val = arrAddVal + quotient;
         quotient = Math.floor(val/10);
-        let plusVal = (val%10);
-        stack.push(plusVal);
+        let unitVal = (val%10);
+        stack.push(unitVal);
         lenOfL1--;
         lenOfl2--;
     }
