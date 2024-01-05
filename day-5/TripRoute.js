@@ -19,20 +19,19 @@ const getTripRoute = (tickets) => {
         let source = tripSource;
         let trip = source;
         let cnt = 0;
-        while (ticketMap.has(source) && cnt > tickets.length) {
+        while (ticketMap.has(source) && cnt < tickets.length) {
             trip += ", " + ticketMap.get(source);
             source = ticketMap.get(source);
             cnt++;
         }
-        return `'${trip}'`;
+        return tickets.length + 1 === trip.split(", ").length ? `'${trip}'` : `Please enter valid tickets as we got incomplete trip sequence: '${trip}'`;
     } else {
         console.log("Invalid input data!");
         return;
     }
 }
 
-const tickets = [{ source: 'Amsterdam', destination: 'Berlin' }, {
-    source: 'Paris', destination:
-        'London'
-}, { source: 'London', destination: 'Amsterdam' }];
+const tickets = [{ source: 'Amsterdam', destination: 'Paris' }, 
+                { source: 'Paris', destination: 'Berlin' }, 
+                { source: 'London', destination: 'Berlin' }];
 console.log(getTripRoute(tickets));

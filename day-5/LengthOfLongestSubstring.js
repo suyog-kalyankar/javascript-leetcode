@@ -1,16 +1,15 @@
 const lengthOfLongestSubstring = (string) => {
-    let max = 0, current_string = "", i, char, pos;
-
-    for (i = 0; i < string.length; i += 1) {
-        char = string.charAt(i);
-        pos = current_string.indexOf(char);
-        if (pos !== -1) {
-            current_string = current_string.substr(pos + 1);
-        }
-        current_string += char;
-        max = Math.max(max, current_string.length);
+   let current_string = "", max = 0, char, pos;
+   for(let i = 0; i < string.length; i++) {
+    char = string.charAt(i);
+    pos = current_string.indexOf(char);
+    if (pos !== -1) {
+        current_string = current_string.substring(pos+1);
     }
-    return max;
+    current_string += char;
+    max = Math.max(current_string.length, max);
+   }
+   return max;
 }
 
 console.log(lengthOfLongestSubstring("abcabcbb"));
